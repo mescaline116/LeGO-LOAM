@@ -1,7 +1,8 @@
+# LeGO LOAM
 1. Set up a ground vehicle(car) with GPS, IMU(with sensor fusion) and LIDAR on the ROS Noetic platform.
 2. Achieved improvements in SLAM loop closure, detection of dataset points and accuracy by aligning IMU with LIDAR odometry.
 
-# Problems faced
+## Limitations
 * LeGO LOAM mapped some objects, like trees, twice because there is no loop closure
 * In the absence of loop closure, it couldn’t perform corrections when the car went back to a place it had already mapped
 * This is the reason the sensor sweeps are not overlapping and a continuous drift is occurring as observed in the image
@@ -9,7 +10,7 @@
 
 <img src="https://github.com/mescaline116/LiDAR-SLAM-using-LeGO-LOAM/assets/71351959/c291d80f-c4de-47ef-966f-cca82cdb6c90" arg="unnamed" width=500 height=300>
 
-# IMU Integration
+## IMU Integration
 * When the odometry is obtained by using only the LiDAR point cloud data the map generated is moving out of the plane.
 * The IMU data is used map optimization and feature association in LEGO-LOAM.
 * By adding the IMU data there is clear improvement in the resultant map. This can be observed in the images demonstrated.
